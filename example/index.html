@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue dropdown component</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@primer/css@15.2.0/dist/primer.css">
+    <link rel="stylesheet" href="../dist/index.min.css">
+</head>
+<body>
+<div id="root" class="container-lg mt-6 pt-2"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@3.0.5/dist/vue.global.js"></script>
+<script src="../dist/index.umd.js"></script>
+<script type="application/javascript">
+    Vue.createApp({
+        template: `<div class="col-12">
+    <j-dropdown #default="{toggle}">
+        <button class="btn btn-sm" v-bind="toggle">Menuitem</button>
+        <j-dropdown-menu>
+            <j-dropdown-menuitem>menuitem</j-dropdown-menuitem>
+            <j-dropdown-menuitem divider/>
+            <j-dropdown-menuitem>menuitem</j-dropdown-menuitem>
+            <j-dropdown-menuitem>menuitem</j-dropdown-menuitem>
+        </j-dropdown-menu>
+    </j-dropdown>
+
+    <br>
+
+    <j-dropdown #default="{toggle}" class="mt-3">
+        <button class="btn btn-sm" v-bind="toggle">Menuitemradio</button>
+        <j-dropdown-menu mode="select-menu">
+            <template #header>Header</template>
+            <j-dropdown-menuitem role="menuitemradio">menuitemradio</j-dropdown-menuitem>
+            <j-dropdown-menuitem role="menuitemradio">menuitemradio</j-dropdown-menuitem>
+            <j-dropdown-menuitem role="menuitemradio">menuitemradio</j-dropdown-menuitem>
+        </j-dropdown-menu>
+    </j-dropdown>
+
+    <br>
+
+    <j-dropdown #default="{toggle}" class="mt-3">
+        <button class="btn btn-sm" v-bind="toggle">Menuitemcheckbox</button>
+        <j-dropdown-menu mode="select-menu">
+            <template #header>Header</template>
+            <j-dropdown-menuitem role="menuitemcheckbox">menuitemradio</j-dropdown-menuitem>
+            <j-dropdown-menuitem role="menuitemcheckbox">menuitemradio</j-dropdown-menuitem>
+            <j-dropdown-menuitem role="menuitemcheckbox">menuitemradio</j-dropdown-menuitem>
+        </j-dropdown-menu>
+    </j-dropdown>
+</div>`
+    })
+        .use(window.VueDropdown.default)
+        .mount('#root');
+</script>
+</body>
+</html>

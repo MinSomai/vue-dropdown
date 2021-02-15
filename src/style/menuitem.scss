@@ -1,0 +1,128 @@
+@use "./variable.scss" as *;
+
+.j-dropdown {
+  .j-dropdown-menuitem {
+    display: block;
+    border: none;
+    width: 100%;
+    color: $black;
+    background-color: transparent;
+    font-weight: 400;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    text-align: left;
+
+    &:focus,
+    &:hover {
+      background-color: $item-hover-bg;
+      outline: none;
+      cursor: pointer;
+    }
+
+    &:disabled,
+    &[aria-disabled='true'] {
+      color: mix($white, $black, 50%);
+
+      &:hover {
+        background-color: transparent;
+        cursor: default;
+      }
+    }
+  }
+
+  .j-dropdown-submenu-container > .submenu-toggle {
+    display: flex;
+    align-items: center;
+    border: none;
+    width: 100%;
+    background-color: transparent;
+
+    &:focus,
+    &:hover {
+      background-color: $item-hover-bg;
+      outline: none;
+      cursor: pointer;
+    }
+
+    &.checked { font-weight: 600; }
+
+    & > .submenu-placeholder {
+      flex: auto;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      text-align: left;
+    }
+
+    & > .octicon-chevron-right { fill: rgba($black, 0.6); }
+  }
+
+  .j-dropdown-menu {
+    .j-dropdown-menuitem,
+    .j-dropdown-submenu-container > [role='menuitem'] {
+      padding: 4px 14px;
+    }
+  }
+
+  .j-dropdown-select-menu {
+    .j-dropdown-menuitem,
+    .j-dropdown-submenu-container {
+      border-bottom: $border;
+
+      &:last-child { border-bottom: none; }
+    }
+
+    .j-dropdown-menuitem {
+      padding: 7px 16px;
+
+      .octicon-check {
+        margin-right: 4px;
+        vertical-align: text-bottom;
+        visibility: hidden;
+        transform: scale(0);
+        transition: transform 0.15s ease-in 0s;
+      }
+
+      &[aria-selected='true'] {
+        font-weight: 600;
+
+        .octicon-check {
+          visibility: visible;
+          transform: scale(1);
+        }
+      }
+
+      input[type='radio'],
+      input[type='checkbox'] {
+        display: none !important;
+      }
+    }
+
+    .j-dropdown-submenu-container > [role='menuitem'] {
+      padding: 7px 16px;
+
+      & > .submenu-blank-icon {
+        display: block;
+        margin-right: 4px;
+        width: 16px;
+        height: 16px;
+      }
+
+      & > .octicon-check,
+      & > .octicon-dash {
+        margin-right: 4px;
+        animation-name: submenu-icon-in;
+        animation-delay: 0s;
+        animation-duration: 0.15s;
+        animation-timing-function: ease-in;
+      }
+    }
+  }
+}
+
+@keyframes submenu-icon-in {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}

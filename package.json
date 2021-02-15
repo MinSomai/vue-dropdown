@@ -1,0 +1,82 @@
+{
+  "name": "@tomoeed/vue-dropdown",
+  "version": "1.0.0",
+  "description": "A dropdown menu component for Vue3",
+  "author": "Lu Mengyao",
+  "homepage": "https://github.com/meshareL/vue-dropdown",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meshareL/vue-dropdown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/meshareL/vue-dropdown/issues"
+  },
+  "main": "dist/index.umd.js",
+  "module": "dist/index.esm.js",
+  "types": "type/index.d.ts",
+  "files": [
+    "dist",
+    "type"
+  ],
+  "keywords": [
+    "vue",
+    "dropdown",
+    "menu"
+  ],
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "rollup -c && node script/build-scss.js",
+    "pretest": "npm run build",
+    "test": "karma start test/karma.config.js",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "vue": "3.x"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/plugin-transform-runtime": "^7.12.15",
+    "@babel/preset-env": "^7.12.16",
+    "@babel/runtime": "^7.12.13",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "@rollup/plugin-typescript": "^8.2.0",
+    "@types/chai": "^4.2.15",
+    "@types/cssnano": "^4.0.0",
+    "@types/karma": "^5.0.1",
+    "@types/mocha": "^8.2.0",
+    "@types/node": "^14.14.28",
+    "@types/sass": "^1.16.0",
+    "@types/sinon": "^9.0.10",
+    "@vue/compiler-sfc": "^3.0.5",
+    "@vue/test-utils": "^2.0.0-rc.1",
+    "autoprefixer": "^10.2.4",
+    "babel-loader": "^8.2.2",
+    "chai": "^4.3.0",
+    "cssnano": "^4.1.10",
+    "karma": "^6.1.1",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-mocha": "^2.0.1",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-webpack": "^5.0.0",
+    "mocha": "^8.3.0",
+    "postcss": "^8.2.6",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.39.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.32.7",
+    "sinon": "^9.2.4",
+    "ts-loader": "^8.0.17",
+    "tslib": "^2.1.0",
+    "typescript": "^4.1.5",
+    "vue": "^3.0.5",
+    "webpack": "^5.21.2"
+  }
+}

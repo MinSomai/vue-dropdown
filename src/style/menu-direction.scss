@@ -1,0 +1,198 @@
+@use "./variable.scss" as *;
+
+.j-dropdown {
+  .j-dropdown-menu,
+  .j-dropdown-select-menu,
+  .j-dropdown-submenu {
+    // ========== top ==========
+    &.j-dropdown-top-start,
+    &.j-dropdown-top-center,
+    &.j-dropdown-top-end {
+      bottom: 100%;
+      margin: 0 0 6px 0;
+    }
+
+    &.j-dropdown-top-start { left: 0; }
+    &.j-dropdown-top-end { right: 0; }
+
+    // ========== right ==========
+    &.j-dropdown-right-start,
+    &.j-dropdown-right-center,
+    &.j-dropdown-right-end {
+      left: 100%;
+      margin: 0 0 0 6px;
+    }
+
+    &.j-dropdown-right-start { top: 0; }
+    &.j-dropdown-right-end { bottom: 0; }
+
+    // ========== bottom ==========
+    &.j-dropdown-bottom-start,
+    &.j-dropdown-bottom-center,
+    &.j-dropdown-bottom-end {
+      top: 100%;
+      margin: 6px 0 0 0;
+    }
+
+    &.j-dropdown-bottom-start { left: 0; }
+    &.j-dropdown-bottom-end { right: 0; }
+
+    // ========== left ==========
+    &.j-dropdown-left-start,
+    &.j-dropdown-left-center,
+    &.j-dropdown-left-end {
+      right: 100%;
+      margin: 0 6px 0 0;
+    }
+
+    &.j-dropdown-left-start { top: 0; }
+    &.j-dropdown-left-end { bottom: 0; }
+
+    &.j-dropdown-top-center,
+    &.j-dropdown-bottom-center {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.j-dropdown-left-center,
+    &.j-dropdown-right-center {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      display: inline-block;
+    }
+
+    &::before { border: 7px solid transparent; }
+    &::after { border: 6px solid transparent; }
+
+    // ========== top ==========
+    &.j-dropdown-top-start,
+    &.j-dropdown-top-center,
+    &.j-dropdown-top-end {
+      &::before {
+        bottom: -14px;
+        border-top-color: $gray;
+      }
+
+      &::after {
+        bottom: -12px;
+        border-top-color: $white;
+      }
+    }
+
+    &.j-dropdown-top-start {
+      &::before { left: 9px; }
+      &::after { left: 10px; }
+    }
+    &.j-dropdown-top-end {
+      &::before { right: 9px; }
+      &::after { right: 10px; }
+    }
+
+    // ========== right ==========
+    &.j-dropdown-right-start,
+    &.j-dropdown-right-center,
+    &.j-dropdown-right-end {
+      &::before {
+        left: -14px;
+        border-right-color: $gray;
+      }
+
+      &::after {
+        left: -12px;
+        border-right-color: $white;
+      }
+    }
+
+    &.j-dropdown-right-start {
+      &::before { top: 9px; }
+      &::after { top: 10px; }
+    }
+    &.j-dropdown-right-end {
+      &::before { bottom: 9px; }
+      &::after { bottom: 10px; }
+    }
+
+    // ========== bottom ==========
+    &.j-dropdown-bottom-start,
+    &.j-dropdown-bottom-center,
+    &.j-dropdown-bottom-end {
+      &::before {
+        top: -14px;
+        border-bottom-color: $gray;
+      }
+
+      &::after {
+        top: -12px;
+        border-bottom-color: $white;
+      }
+    }
+
+    &.j-dropdown-bottom-start {
+      &::before { left: 9px; }
+      &::after { left: 10px; }
+    }
+    &.j-dropdown-bottom-end {
+      &::before { right: 9px; }
+      &::after { right: 10px; }
+    }
+
+    // ========== left ==========
+    &.j-dropdown-left-start,
+    &.j-dropdown-left-center,
+    &.j-dropdown-left-end {
+      &::before {
+        right: -14px;
+        border-left-color: $gray;
+      }
+
+      &::after {
+        right: -12px;
+        border-left-color: $white;
+      }
+    }
+
+    &.j-dropdown-left-start {
+      &::before { top: 9px; }
+      &::after { top: 10px; }
+    }
+    &.j-dropdown-left-end {
+      &::before { bottom: 9px; }
+      &::after { bottom: 10px; }
+    }
+
+    &.j-dropdown-top-center,
+    &.j-dropdown-bottom-center {
+      &::before,
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    &.j-dropdown-right-center,
+    &.j-dropdown-left-center {
+      &::before,
+      &::after {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  .j-dropdown-select-menu.j-dropdown-select-menu-with-header {
+    &.j-dropdown-bottom-start,
+    &.j-dropdown-bottom-center,
+    &.j-dropdown-bottom-end {
+      &::after { border-bottom-color: $header-bg; }
+    }
+
+    &.j-dropdown-right-start::after { border-right-color: $header-bg; }
+    &.j-dropdown-left-start::after { border-left-color: $header-bg; }
+  }
+}

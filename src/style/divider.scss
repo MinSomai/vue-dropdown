@@ -1,0 +1,29 @@
+@use "./variable.scss" as *;
+
+.j-dropdown {
+  .j-dropdown-divider { display: block; }
+
+  .j-dropdown-menu .j-dropdown-divider {
+    margin: 8px 0;
+    border: none;
+    height: 1px;
+    background-color: $gray;
+    opacity: 1;
+  }
+
+  .j-dropdown-select-menu {
+    .j-dropdown-divider {
+      padding: 4px 16px;
+      margin: 0;
+      background-color: $select-menu-divider-bg;
+      border-bottom: $border;
+
+      &:last-child { border-bottom: none; }
+
+      &:not(hr) {
+        font-weight: 500;
+        color: $select-menu-divider-color;
+      }
+    }
+  }
+}

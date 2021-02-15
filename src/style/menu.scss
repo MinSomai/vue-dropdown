@@ -1,0 +1,66 @@
+@use "./variable.scss" as *;
+
+.j-dropdown {
+  .j-dropdown-menu,
+  .j-dropdown-select-menu,
+  .j-dropdown-submenu {
+    position: absolute;
+    z-index: 200;
+    border: $border;
+    border-radius: $border-radius;
+    background-color: $white;
+    background-clip: padding-box;
+    box-shadow: 0 1px 5px rgba($black, 0.2);
+  }
+
+  .j-dropdown-submenu-container { position: relative; }
+
+  .j-dropdown-menu,
+  .j-dropdown-menu .j-dropdown-submenu {
+    padding: 4px 0;
+  }
+
+  .j-dropdown-select-menu {
+    font-size: 12px;
+
+    &, & .j-dropdown-submenu { min-width: 250px; }
+  }
+
+  .j-dropdown-select-menu {
+    .j-dropdown-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7px 7px 7px 16px;
+      border-bottom: $border;
+      font-weight: 600;
+      color: $black;
+      background-color: $header-bg;
+
+      .j-dropdown-closer {
+        margin: -8px -7px -8px -8px;
+        padding: 8px;
+        border: none;
+        line-height: 1;
+        background-color: transparent;
+        opacity: 0.5;
+
+        &:hover {
+          opacity: 0.8;
+          outline: none;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .j-dropdown-body {}
+
+    .j-dropdown-footer {
+      padding: 7px 16px;
+      border-top: $border;
+      color: $footer-color;
+      line-height: 1.25;
+      text-align: center;
+    }
+  }
+}

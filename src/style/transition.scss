@@ -1,0 +1,6 @@
+@use "./variable.scss" as *;
+
+.j-dropdown-menu-fade-in {
+  &-enter-from { opacity: 0; }
+  &-enter-active { transition: opacity 0.25s ease-in 0s }
+}
